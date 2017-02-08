@@ -1,0 +1,34 @@
+language: bash
+services: docker
+
+env:
+    global:
+        - RENPY_LATEST_VERSION="6.99.12.2"
+    matrix:
+        - RENPY_VERSION="6.99.0"
+        - RENPY_VERSION="6.99.1"
+        - RENPY_VERSION="6.99.2"
+        - RENPY_VERSION="6.99.3"
+        - RENPY_VERSION="6.99.4"
+        - RENPY_VERSION="6.99.5"
+        - RENPY_VERSION="6.99.6"
+        - RENPY_VERSION="6.99.7"
+        - RENPY_VERSION="6.99.8"
+        - RENPY_VERSION="6.99.9"
+        - RENPY_VERSION="6.99.10"
+        - RENPY_VERSION="6.99.11"
+        - RENPY_VERSION="6.99.12"
+        - RENPY_VERSION="6.99.12.1"
+        - RENPY_VERSION="6.99.12.2"
+
+script:
+    - docker build -t codeneko/renpy:$RENPY_VERSION --build-arg RENPY_VERSION=$RENPY_VERSION .
+
+after_success:
+    - if [ "$RENPY_VERSION" == "$RENPY_LATEST_VERSION" ]; then
+      docker tag codeneko/renpy:$RENPY_VERSION codeneko/renpy
+      fi;
+    - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+      docker push codeneko/renpy:$RENPY_VERSION;
+      fi;
