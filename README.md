@@ -1,6 +1,6 @@
 # Renpy in Docker
 
-[![Build Status](https;//travis-ci.org/kreutzwj/RenpyInDocker.svg?branch=master)](https;//travis-ci.org/kreutzwj/RenpyInDocker)
+[![Build Status](https://travis-ci.org/kreutzwj/RenpyInDocker.svg?branch=master)](https://travis-ci.org/kreutzwj/RenpyInDocker)
 
 
 ## About this Repo
@@ -12,6 +12,13 @@ This is a git repo of the Docker image for [Ren'py](https://www.renpy.org). It c
 ```bash
 docker pull codeneko/renpy
 ```
+
+A specific version can be requested by adding the Ren'py version number as a tag.
+```bash
+docker pull codeneko/renpy:6.99.11
+```
+
+To see available tags vists the [Docker Repository's Tag Page](https://hub.docker.com/r/codeneko/renpy/tags/)
 
 ## Usage
 

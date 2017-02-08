@@ -22,13 +22,15 @@ env:
         - RENPY_VERSION="6.99.12.2"
 
 script:
-    - docker build -t codeneko/renpy:$RENPY_VERSION --build-arg RENPY_VERSION=$RENPY_VERSION .
+    - if [ "$RENPY_VERSION" == "$RENPY_LATEST_VERSION" ]; then
+        docker build -t codeneko/renpy --build-arg RENPY_VERSION=$RENPY_VERSION .
+        docker tag codeneko/renpy codeneko/renpy:$RENPY_VERSION;
+      else
+        docker build -t codeneko/renpy:$RENPY_VERSION --build-arg RENPY_VERSION=$RENPY_VERSION .
+      fi;
 
 after_success:
-    - if [ "$RENPY_VERSION" == "$RENPY_LATEST_VERSION" ]; then
-      docker tag codeneko/renpy:$RENPY_VERSION codeneko/renpy;
-      fi;
     - if [ "$TRAVIS_BRANCH" == "master" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-      docker push codeneko/renpy:$RENPY_VERSION;
+      docker push codeneko/renpy;
       fi;
