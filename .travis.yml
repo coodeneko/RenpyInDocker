@@ -3,7 +3,7 @@ services: docker
 
 env:
     global:
-        - RENPY_LATEST_VERSION="6.99.12.3"
+        - RENPY_LATEST_VERSION="6.99.12.4"
     matrix:
         - RENPY_VERSION="6.99.0"
         - RENPY_VERSION="6.99.1"
@@ -21,6 +21,7 @@ env:
         - RENPY_VERSION="6.99.12.1"
         - RENPY_VERSION="6.99.12.2"
         - RENPY_VERSION="6.99.12.3"
+        - RENPY_VERSION="6.99.12.4"
 
 script:
     - if [ "$RENPY_VERSION" == "$RENPY_LATEST_VERSION" ]; then
