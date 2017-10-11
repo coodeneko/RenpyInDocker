@@ -1,6 +1,6 @@
 # Renpy in Docker
 
-[![Build Status](https://travis-ci.org/kreutzwj/RenpyInDocker.svg?branch=master)](https://travis-ci.org/kreutzwj/RenpyInDocker)
+[![Build Status](https://travis-ci.org/coodeneko/RenpyInDocker.svg?branch=master)](https://travis-ci.org/coodeneko/RenpyInDocker)
 
 
 ## About this Repo
