@@ -10,6 +10,7 @@ ENV SDL_AUDIODRIVER="dummy" \
 
 RUN apt-get -y update \
     && apt-get -y --no-install-recommends install \
+        procps \
         bzip2 \
         ca-certificates \
         curl \
