@@ -4,9 +4,9 @@ MAINTAINER Joel Kreutzwieser
 
 ARG RENPY_VERSION
 ENV SDL_AUDIODRIVER="dummy" \
-    SDL_VIDEODRIVE="dummy" \
+    SDL_VIDEODRIVER="dummy" \
     RENPY_DIR="/renpy" \
-    RENPY_VERSION=${RENPY_VERSION:-"6.99.13"}
+    RENPY_VERSION=${RENPY_VERSION:-"7.0.0"}
 
 RUN apt-get -y update \
     && apt-get -y --no-install-recommends install \
@@ -19,7 +19,7 @@ RUN apt-get -y update \
         wget \
     && rm -Rf /var/lib/apt/lists/*
 
-RUN wget -O renpy-$RENPY_VERSION-sdk.tar.bz2 http://www.renpy.org/dl/$RENPY_VERSION/renpy-$RENPY_VERSION-sdk.tar.bz2 \
+RUN wget -O renpy-$RENPY_VERSION-sdk.tar.bz2 https://www.renpy.org/dl/$RENPY_VERSION/renpy-$RENPY_VERSION-sdk.tar.bz2 \
     && tar -xf renpy-$RENPY_VERSION-sdk.tar.bz2 \
     && rm renpy-$RENPY_VERSION-sdk.tar.bz2 \
     && mv renpy-$RENPY_VERSION-sdk $RENPY_DIR
