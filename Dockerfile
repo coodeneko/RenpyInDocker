@@ -1,12 +1,12 @@
 FROM ubuntu:latest
 
-MAINTAINER Joel Kreutzwieser
+LABEL maintainer="Joel Kreutzwieser"
 
 ARG RENPY_VERSION
 ENV SDL_AUDIODRIVER="dummy" \
     SDL_VIDEODRIVER="dummy" \
     RENPY_DIR="/renpy" \
-    RENPY_VERSION=${RENPY_VERSION:-"7.0.0"}
+    RENPY_VERSION=${RENPY_VERSION:-"7.1.3"}
 
 RUN apt-get -y update \
     && apt-get -y --no-install-recommends install \
