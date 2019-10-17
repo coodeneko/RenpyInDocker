@@ -6,7 +6,7 @@ ARG RENPY_VERSION
 ENV SDL_AUDIODRIVER="dummy" \
     SDL_VIDEODRIVER="dummy" \
     RENPY_DIR="/renpy" \
-    RENPY_VERSION=${RENPY_VERSION:-"7.3.4"}
+    RENPY_VERSION=${RENPY_VERSION:-"7.3.5"}
 
 RUN apt-get -y update \
     && apt-get -y --no-install-recommends install \

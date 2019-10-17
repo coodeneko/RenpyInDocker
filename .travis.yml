@@ -3,7 +3,7 @@ services: docker
 
 env:
     global:
-        - RENPY_VERSION="7.3.4"
+        - RENPY_VERSION="7.3.5"
 
 script:
     - docker build -t codeneko/renpy --build-arg RENPY_VERSION=$RENPY_VERSION .;
