@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM python:2
 
 LABEL maintainer="Joel Kreutzwieser"
 
